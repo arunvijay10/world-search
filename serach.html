@@ -19,7 +19,7 @@
         <br>
 
 
-        <form>
+        <form method="POST" action="next.php" enctype="multipart/form-data"> 
             <div class="form-group">
                 <div class="row">
                     <label for="stitle" class="col-sm-2">Title</label>
@@ -65,7 +65,7 @@
                 <div class="row">
                     <label for="fileupload" class="col-sm-2">Search File</label>
                     <div class="col-sm-8">
-                        <input type="file" class="form-control-file" name="fileupload" placeholder="Site Desc">
+                        <input type="file" class="form-control-file" name="fileup" placeholder="Site Desc">
 
                     </div>
                 </div>
@@ -106,3 +106,19 @@
 </body>
 
 </html>
+
+<?php
+
+mysql_connect("127.0.0.1","root","");
+mysql_select_db("Search");
+
+if(isset($_POST['submit']))
+{
+$stitle = $_POST['stitle'];
+$slink = $_POST['slink'];
+$sKeyword = $_POST['sKeyword'];
+$sdesc = $_POST['sdesc'];
+$fileup=$_File['fileup']["name"]
+}
+
+?>
