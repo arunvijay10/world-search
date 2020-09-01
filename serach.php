@@ -126,8 +126,9 @@ if(move_uploaded_file($_FILES['$fileup']['tmp_name'],"images/".$_FILES["fileup"]
     ('$stitle','$link','$sKeyword','$desc',
     '$fileup')";
 
-    $rs= mysql_query($sql)
-    if($rs){
+    $rs= mysql_query($sql);
+    if($rs)
+    {
         echo "<script>Done </script>";
     }
     else
