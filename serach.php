@@ -118,7 +118,24 @@ $stitle = $_POST['stitle'];
 $slink = $_POST['slink'];
 $sKeyword = $_POST['sKeyword'];
 $sdesc = $_POST['sdesc'];
-$fileup=$_File['fileup']["name"]
+$fileup=$_FILES['fileup']['name'];
+
+if(move_uploaded_file($_FILES['$fileup']['tmp_name'],"images/".$_FILES["fileup"]['name']))
+{
+    $sql ="insert into search(stitle,slink,skeyword,sdesc,fileup) values
+    ('$stitle','$link','$sKeyword','$desc',
+    '$fileup')";
+
+    $rs= mysql_query($sql)
+    if($rs){
+        echo "<script>Done </script>";
+    }
+    else
+    {
+        echo "<script>Failed to upload</script>";
+    }
+}
+
 }
 
 ?>
